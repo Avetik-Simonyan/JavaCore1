@@ -14,6 +14,6 @@ public class TestStack {
             System.out.println(mystack1.рор());
         System.out.println("Coдepжимoe стека mystack2:");
         for (int i = 0; i < 10; i++)
-            Systut.println(mystack2.рор());
+            System.out.println(mystack2.рор());
     }
 }
