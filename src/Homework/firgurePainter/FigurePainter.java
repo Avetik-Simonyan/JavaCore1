@@ -1,30 +1,16 @@
-package Homework;
-
+package Homework.firgurePainter;
 
 public class FigurePainter {
-    public static void main(String[] args) {
-
-//Կոդ՝ որը պատկերում է այս եռանկյունին.
-//*
-//* *
-//* * *
-//* * * *
-
-        for (int i = 0; i < 5; i++) {
+    void figureOne(int n, char c) {
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                System.out.print("* ");
+                System.out.print(c + " ");
             }
             System.out.println();
         }
+    }
 
-        System.out.println();
-
-// Կոդ՝ որը պատկերում է այս եռանկյունին.
-//      *
-//    * *
-//  * * *
-//* * * *
-
+    void figureTwo() {
         for (int i = 0; i < 4; i++) {
             for (int j = 4; j > i; j--) {
                 System.out.print("  ");
@@ -35,27 +21,18 @@ public class FigurePainter {
             System.out.println();
         }
 
-        System.out.println();
+    }
 
-// Կոդ՝ որը պատկերում է այս եռանկյունին.
-// * * * *
-// * * *
-// * *
-// *
-
+    void figureThree() {
         for (int i = 0; i < 4; i++) {
             for (int j = 4; j > i; j--) {
                 System.out.print("* ");
             }
             System.out.println(" ");
         }
+    }
 
-// Կոդ՝ որը պատկերում է այս եռանկյունին.
-// * * * *
-//   * * *
-//     * *
-//       *
-
+    void figureFour() {
         for (int i = 4; i >= 1; i--) {
             for (int j = 4; j >= i; j--) {
                 System.out.print("  ");
@@ -65,17 +42,9 @@ public class FigurePainter {
             }
             System.out.println(" ");
         }
-        System.out.println();
+    }
 
-//Կոդ՝ որը պատկերում է այս պատկերը՝
-//    *
-//   * *
-//  * * *
-// * * * *
-//  * * *
-//   * *
-//    *
-
+    void figureFive() {
         for (int i = 0; i < 4; i++) {
             for (int j = 4; j > i; j--) {
                 System.out.print(" ");
