@@ -1,8 +1,12 @@
-package Homework;
+package Homework.firgurePainter;
 
-public class CharArray1 {
+public class CharArray2 {
     public static void main(String[] args) {
         char[] text = {' ', ' ', 'h', 'e', 'l', 'l', 'o', ' ', 'j', 'a', 'v', 'a', ' ', ' ', ' ',};
+
+    }
+
+    char[] trim(char[] text) {
         int startIndex = 0;
         int endIndex = text.length - 1;
         while (startIndex < endIndex && text[startIndex] == ' ') {
@@ -18,10 +22,8 @@ public class CharArray1 {
         for (int i = startIndex; i <= endIndex; i++) {
             result[index++] = text[i];
         }
+        return  result;
 
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i]);
-        }
     }
-
 }
+
