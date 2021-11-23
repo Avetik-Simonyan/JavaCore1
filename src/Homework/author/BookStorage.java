@@ -1,11 +1,11 @@
 package Homework.author;
 
 public class BookStorage {
-    private Book[] books = new Book[16];
+    private Book[] books = new Book[10];
     private int size;
 
     public void add(Book book) {
-        if (books.length == size) {
+        if (size == books.length) {
             extand();
         }
         books[size++] = book;
@@ -13,7 +13,7 @@ public class BookStorage {
 
     private void extand() {
         Book[] tmp = new Book[books.length + 10];
-        System.arraycopy(books, 0, tmp, 0, books.length);
+        System.arraycopy(books, 0, tmp, 0, size);
         books = tmp;
     }
 
@@ -29,5 +29,41 @@ public class BookStorage {
                 System.out.println(books[i]);
             }
         }
+    }
+
+    public void searchBooksByAuthor(String keyword) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().getEmail().equals(keyword)) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public void countBooksByAuthor(String keyword) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().getEmail().equals(keyword)) {
+                count += books[i].getCount();
+            }
+        }
+        System.out.println(count);
+    }
+
+    Book changeBookAuthor(String keyword) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getTitle().equals(keyword)) {
+                return books[i];
+            }
+        }
+        return null;
+    }
+
+    Author searchAuthor(String email) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().getEmail().equals(email)) {
+                return books[i].getAuthor();
+            }
+        }
+        return null;
     }
 }

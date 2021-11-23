@@ -17,7 +17,7 @@ public class AuthorStorage {
         authors = tmp;
     }
 
-    public void print(){
+    public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(authors[i]);
         }
@@ -25,8 +25,8 @@ public class AuthorStorage {
 
     public void searchByName(String keyword) {
         for (int i = 0; i < size; i++) {
-            if(authors[i].getName().contains(keyword) ||
-            authors[i].getSurname().contains(keyword)){
+            if (authors[i].getName().contains(keyword) ||
+                    authors[i].getSurname().contains(keyword)) {
                 System.out.println(authors[i]);
             }
         }
@@ -34,10 +34,19 @@ public class AuthorStorage {
 
     public void searchByAge(int minAge, int maxAge) {
         for (int i = 0; i < size; i++) {
-            if (authors[i].getAge() > minAge &&
-                    authors[i].getAge() < maxAge) {
+            if (authors[i].getAge() >= minAge &&
+                    authors[i].getAge() <= maxAge) {
                 System.out.println(authors[i]);
             }
         }
+    }
+
+    public Author getByEmail(String email) {
+        for (int i = 0; i < size; i++) {
+            if (authors[i].getEmail().equals(email)) {
+                return authors[i];
+            }
+        }
+        return null;
     }
 }
