@@ -49,4 +49,13 @@ public class AuthorStorage {
         }
         return null;
     }
+
+    public void deleteAuthor(String keyword) {
+        for (int i = 0; i < size; i++) {
+            if (authors[i].getEmail().equals(keyword)) {
+                authors[i] = authors[i + 1];
+                size--;
+            }
+        }
+    }
 }
