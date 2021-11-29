@@ -64,7 +64,6 @@ public class Book {
         this.serialId = serialId;
     }
 
-
     public void setAuthor(Author author) {
         this.author = author;
     }
