@@ -23,7 +23,16 @@ public class BookStorage {
         }
     }
 
-    public void searchBookByTitle(String keyword) {
+    public Book getBySerialId(String serialId) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getSerialId().equals(serialId)) {
+                return books[i];
+            }
+        }
+        return null;
+    }
+
+    public void searchByTitle(String keyword) {
         for (int i = 0; i < size; i++) {
             if (books[i].getTitle().contains(keyword)) {
                 System.out.println(books[i]);
@@ -31,56 +40,37 @@ public class BookStorage {
         }
     }
 
-    public void searchBooksByAuthor(String keyword) {
+    public void searchByAuthor(Author author) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getAuthor().getEmail().equals(keyword)) {
+            if (books[i].getAuthor().equals(author)) {
                 System.out.println(books[i]);
             }
         }
     }
 
-    public void countBooksByAuthor(String keyword) {
+    public void countByAuthor(Author author) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (books[i].getAuthor().getEmail().equals(keyword)) {
-                count += books[i].getCount();
+            if (books[i].getAuthor().equals(author)) {
+                count++;
             }
         }
-        System.out.println(count);
+        System.out.println("count of " + author.getEmail() + " author's book is " + count);
     }
 
-    Book changeBookAuthor(String keyword) {
+    public void delete(Book book) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getTitle().equals(keyword)) {
-                return books[i];
-            }
-        }
-        return null;
-    }
-
-    Author searchAuthor(String email) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getAuthor().getEmail().equals(email)) {
-                return books[i].getAuthor();
-            }
-        }
-        return null;
-    }
-
-    public void deleteByAuthor(String keyword) {
-        for (int i = 0; i < size; i++) {
-            if (books[i].getAuthor().getEmail().equals(keyword)) {
-                books[i] = books[i + 1];
-                size--;
+            if (books[i].equals(book)) {
+                ArrayUtil.deleteByIndex(books, i, size);
+                break;
             }
         }
     }
 
-    public void deleteBook(String keyword) {
+    public void deleteByAuthor(Author author) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getTitle().equals(keyword)) {
-                books[i] = books[i + 1];
-                size--;
+            if (books[i].getAuthor().equals(author)) {
+                ArrayUtil.deleteByIndex(books, i, size);
             }
         }
     }
