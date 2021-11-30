@@ -18,7 +18,7 @@ public class Lesson {
     public Lesson() {
     }
 
-    public String getNameame() {
+    public String getName() {
         return name;
     }
 

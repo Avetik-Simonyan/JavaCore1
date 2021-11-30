@@ -10,7 +10,7 @@ public class Student {
     private String phone;
     private Lesson lesson;
 
-    public Student(String name, String surname, int age, String email, Lesson lesson) {
+    public Student(String name, String surname, int age, String email, String phone, Lesson lesson) {
         this.name = name;
         this.surname = surname;
         this.age = age;
