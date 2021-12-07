@@ -1,4 +1,4 @@
-package Homework.education;
+package Homework.education.model;
 
 import java.util.Objects;
 
@@ -46,6 +46,10 @@ public class Lesson {
         return getPrice();
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,10 +61,6 @@ public class Lesson {
     @Override
     public int hashCode() {
         return Objects.hash(name, duration, lecturerName, price);
-    }
-
-    public void setPrice() {
-        this.price = price;
     }
 
     @Override

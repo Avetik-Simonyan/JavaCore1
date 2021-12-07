@@ -1,8 +1,10 @@
-package Homework.education;
+package Homework.education.storage;
+
+import Homework.education.model.Lesson;
 
 public class LessonStorage {
     private Lesson[] lessons = new Lesson[10];
-    private int size;
+    int size = 0;
 
     public void add(Lesson lesson) {
         if (lessons.length == size) {
